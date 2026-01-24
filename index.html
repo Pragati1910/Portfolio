@@ -1,217 +1,497 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pragati Maheshwari | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pragati Maheshwari | Full Stack Developer</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-
-  <!-- Header -->
-  <header class="header">
-    <div class="logo">Portfolio</div>
-    <nav class="navbar">
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#journey">Journey</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
- <!-- Hero Section -->
-<section id="home" class="hero">
-  <div class="hero-content">
-    <h1>Hello, I'm <span>Pragati Maheshwari</span></h1>
-<p>
-  A Full Stack Developer & AI/ML Enthusiast passionate about building innovative, 
-  user-friendly, and impactful digital solutions. I love transforming ideas into reality 
-  through code, creativity, and cutting-edge technology.
-</p>
-
-<div class="hero-buttons">
-  <a href="#projects" class="btn hero-btn">View My Work</a>
-  <a href="#about" class="btn hero-btn">About Me</a>
-  <a href="#contact" class="btn hero-btn">Let’s Connect</a>
-</div>
-
-  </div>
-</section>
-
-<!-- About Section -->
-<section id="about" class="about-section">
-  <div class="about-container">
-    <div class="about-image creative-img">
-      <!-- Placeholder creative image -->
+  <!-- Animated Background -->
+  <div class="animated-bg">
+    <div class="grid-lines"></div>
+    <div class="floating-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
     </div>
-    <div class="about-text">
-      <h2>About <span>Me</span></h2>
-      <p>I’m a Full Stack Developer and AI/ML Engineer studying at VIT Chennai. I enjoy blending intelligence and creativity into software solutions that are efficient, scalable, and user-friendly.</p>
-      <p>With hands-on experience in frontend, backend, and machine learning, I thrive on solving real-world problems through code.</p>
-      <p>Outside of coding, I’m passionate about innovation, collaboration, and exploring the next big thing in tech.</p>
-      
-      <!-- Social Buttons in About -->
-      <div class="social-buttons">
-        <a href="https://github.com/Pragati1910" target="_blank" class="social-btn github">
-          <i class="fab fa-github"></i> GitHub
-        </a>
-        <a href="https://www.linkedin.com/in/pragati-maheshwari2004/" target="_blank" class="social-btn linkedin">
-          <i class="fab fa-linkedin"></i> LinkedIn
-        </a>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar" data-testid="navbar">
+    <div class="nav-container">
+      <div class="nav-brand" data-testid="nav-brand">
+        <span class="bracket">[</span>
+        <span class="brand-text">PM</span>
+        <span class="bracket">]</span>
+      </div>
+      <div class="nav-menu" data-testid="nav-menu">
+        <a href="#home" class="nav-link" data-testid="nav-home">Home</a>
+        <a href="#about" class="nav-link" data-testid="nav-about">About</a>
+        <a href="#experience" class="nav-link" data-testid="nav-experience">Experience</a>
+        <a href="#skills" class="nav-link" data-testid="nav-skills">Skills</a>
+        <a href="#projects" class="nav-link" data-testid="nav-projects">Projects</a>
+        <a href="#contact" class="nav-link" data-testid="nav-contact">Contact</a>
       </div>
     </div>
-  </div>
-</section>
+  </nav>
 
-  <!-- Journey Section -->
-  <section id="journey" class="section-box">
-    <h2>My <span>Journey</span></h2>
-    <div class="journey-card">
-      <h3>VIT Chennai</h3>
-      <p>B.Tech in Computer Science Engineering (AI & ML) — 2022–2026</p>
-      <p>CGPA: 8.83</p>
+  <!-- Hero Section -->
+  <section id="home" class="hero" data-testid="hero-section">
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="hero-label" data-testid="hero-label">
+          <span class="label-box">AI/ML Engineer</span>
+        </div>
+        
+        <h1 class="hero-title" data-testid="hero-title">
+          <span class="title-line">PRAGATI</span>
+          <span class="title-line highlight">MAHESHWARI</span>
+        </h1>
+        
+        <div class="hero-subtitle" data-testid="hero-subtitle">
+          <div class="subtitle-line">
+            <span class="icon-box"><i class="fas fa-code"></i></span>
+            <span class="text">AI/ML Engineer</span>
+          </div>
+          <div class="subtitle-line">
+            <span class="icon-box"><i class="fas fa-rocket"></i></span>
+            <span class="text">Full Stack Developer</span>
+          </div>
+        </div>
+
+        <div class="hero-cta" data-testid="hero-cta">
+          <a href="#projects" class="cta-btn primary" data-testid="cta-projects">
+            <span>View Projects</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+          <a href="#contact" class="cta-btn secondary" data-testid="cta-contact">
+            <span>Let's Connect</span>
+            <i class="fas fa-paper-plane"></i>
+          </a>
+        </div>
+
+        <div class="hero-links" data-testid="hero-links">
+          <a href="https://github.com/Pragati1910" target="_blank" class="social-link" data-testid="github-link">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/pragati-maheshwari2004/" target="_blank" class="social-link" data-testid="linkedin-link">
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-visual" data-testid="hero-visual">
+        <svg class="connection-lines" viewBox="0 0 600 600">
+          <path class="line-path" d="M 100 100 Q 300 200 400 100 T 500 300" />
+          <circle class="node" cx="100" cy="100" r="8" />
+          <circle class="node" cx="300" cy="180" r="8" />
+          <circle class="node" cx="400" cy="100" r="8" />
+          <circle class="node" cx="500" cy="300" r="8" />
+        </svg>
+      </div>
     </div>
-    <div class="journey-card">
-      <h3>Chennai Public School</h3>
-      <p>High School Diploma — 2008–2022</p>
-      <p>CGPA: 9.32</p>
+    
+    <div class="scroll-indicator" data-testid="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section about-section" data-testid="about-section">
+    <div class="container">
+      <div class="section-header" data-testid="about-header">
+        <span class="section-number">01</span>
+        <h2 class="section-title">About Me</h2>
+        <div class="title-line"></div>
+      </div>
+
+      <div class="about-content">
+        <div class="about-text" data-testid="about-text">
+          <p class="large-text">I'm a <span class="highlight-text">Full Stack Developer</span> and <span class="highlight-text">AI/ML Engineer</span> studying at VIT Chennai.</p>
+          
+          <p>I enjoy blending intelligence and creativity into software solutions that are efficient, scalable, and user-friendly. With hands-on experience in frontend, backend, and machine learning, I thrive on solving real-world problems through code.</p>
+          
+          <p>Outside of coding, I'm passionate about innovation, collaboration, and exploring the next big thing in tech.</p>
+
+          <div class="about-stats" data-testid="about-stats">
+            <div class="stat-box">
+              <span class="stat-number">8.83</span>
+              <span class="stat-label">CGPA</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-number">2022-2026</span>
+              <span class="stat-label">VIT Chennai</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-number">10+</span>
+              <span class="stat-label">Projects</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-visual" data-testid="about-visual">
+          <div class="visual-card">
+            <div class="card-content">
+              <div class="tech-stack">
+                <div class="tech-item">React</div>
+                <div class="tech-item">Node.js</div>
+                <div class="tech-item">Python</div>
+                <div class="tech-item">TensorFlow</div>
+                <div class="tech-item">MongoDB</div>
+                <div class="tech-item">AWS</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Experience Section -->
-  <section id="experience" class="section-box">
-    <h2>My <span>Experience</span></h2>
-    <div class="experience-card">
-      <h3>Software Engineer Intern – FLSmidth</h3>
-      <p>June 2024 – July 2024</p>
-      <ul>
-        <li>Worked on photogrammetry, image processing, and 3D reconstruction.</li>
-        <li>Collaborated with teams for equipment defect analysis.</li>
-      </ul>
+  <section id="experience" class="section experience-section" data-testid="experience-section">
+    <div class="container">
+      <div class="section-header" data-testid="experience-header">
+        <span class="section-number">02</span>
+        <h2 class="section-title">Experience</h2>
+        <div class="title-line"></div>
+      </div>
+
+      <div class="experience-timeline" data-testid="experience-timeline">
+        <div class="timeline-item" data-testid="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">June 2024 – Septembe 2024</div>
+            <h3 class="timeline-title">Software Engineer Intern</h3>
+            <div class="timeline-company">FLSmidth</div>
+            <ul class="timeline-description">
+              <li><i class="fas fa-check"></i>Worked on photogrammetry, image processing, and 3D reconstruction</li>
+              <li><i class="fas fa-check"></i>Collaborated with teams for equipment defect analysis</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="tag">Computer Vision</span>
+              <span class="tag">3D Reconstruction</span>
+              <span class="tag">Image Processing</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-testid="timeline-education">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">2022 – 2026</div>
+            <h3 class="timeline-title">B.Tech in Computer Science Engineering</h3>
+            <div class="timeline-company">VIT Chennai</div>
+            <ul class="timeline-description">
+              <li><i class="fas fa-check"></i>Specialization in AI & Machine Learning</li>
+              <li><i class="fas fa-check"></i>CGPA: 8.83</li>
+            </ul>
+          </div>
+        </div>
+
+
+    <div class="timeline-item" data-testid="timeline-school">
+      <div class="timeline-marker"></div>
+      <div class="timeline-content">
+        <div class="timeline-date">2008 – 2022</div>
+        <h3 class="timeline-title">Higher Secondary Education (PCM)</h3>
+        <div class="timeline-company">Chennai Public School</div>
+        <ul class="timeline-description">
+          <li><i class="fas fa-check"></i>Physics, Chemistry & Mathematics (PCM)</li>
+          <li><i class="fas fa-check"></i>CGPA: 9.12</li>
+        </ul>
+      </div>
+    </div>
+    </div>
+    </div>
+
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section skills-section" data-testid="skills-section">
+    <div class="container">
+      <div class="section-header" data-testid="skills-header">
+        <span class="section-number">03</span>
+        <h2 class="section-title">Skills & Technologies</h2>
+        <div class="title-line"></div>
+      </div>
+
+      <div class="skills-grid" data-testid="skills-grid">
+        <div class="skill-category" data-testid="skill-languages">
+          <div class="category-header">
+            <div class="category-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3>Languages</h3>
+          </div>
+          <div class="skill-list">
+            <div class="skill-item"><span class="skill-bar" style="--width: 90%"></span><span>Python</span></div>
+            <div class="skill-item"><span class="skill-bar" style="--width: 85%"></span><span>JavaScript</span></div>
+            <div class="skill-item"><span class="skill-bar" style="--width: 80%"></span><span>Java</span></div>
+            <div class="skill-item"><span class="skill-bar" style="--width: 75%"></span><span>C/C++</span></div>
+          </div>
+        </div>
+
+        <div class="skill-category" data-testid="skill-frameworks">
+          <div class="category-header">
+            <div class="category-icon">
+              <i class="fas fa-layer-group"></i>
+            </div>
+            <h3>Frameworks</h3>
+          </div>
+          <div class="skill-list">
+            <div class="skill-item"><span class="skill-bar" style="--width: 92%"></span><span>React.js</span></div>
+            <div class="skill-item"><span class="skill-bar" style="--width: 87%"></span><span>Node.js</span></div>
+            <div class="skill-item"><span class="skill-bar" style="--width: 85%"></span><span>Next.js</span></div>
+            <div class="skill-item"><span class="skill-bar" style="--width: 88%"></span><span>TensorFlow</span></div>
+          </div>
+        </div>
+
+        <div class="skill-category" data-testid="skill-databases">
+          <div class="category-header">
+            <div class="category-icon">
+              <i class="fas fa-database"></i>
+            </div>
+            <h3>Databases</h3>
+          </div>
+          <div class="skill-list">
+            <div class="skill-item"><span class="skill-bar" style="--width: 88%"></span><span>MongoDB</span></div>
+            <div class="skill-item"><span class="skill-bar" style="--width: 85%"></span><span>SQL</span></div>
+          </div>
+        </div>
+
+        <div class="skill-category" data-testid="skill-tools">
+          <div class="category-header">
+            <div class="category-icon">
+              <i class="fas fa-tools"></i>
+            </div>
+            <h3>Tools & Platforms</h3>
+          </div>
+          <div class="skill-list">
+            <div class="skill-item"><span class="skill-bar" style="--width: 90%"></span><span>Git/GitHub</span></div>
+            <div class="skill-item"><span class="skill-bar" style="--width: 78%"></span><span>AWS</span></div>
+            <div class="skill-item"><span class="skill-bar" style="--width: 86%"></span><span>Figma</span></div>
+            <div class="skill-item"><span class="skill-bar" style="--width: 95%"></span><span>VS Code</span></div>
+          </div>
+        </div>
+
+        <div class="skill-category" data-testid="skill-advanced">
+          <div class="category-header">
+            <div class="category-icon">
+              <i class="fas fa-brain"></i>
+            </div>
+            <h3>AI/ML</h3>
+          </div>
+          <div class="skill-list">
+            <div class="skill-item"><span class="skill-bar" style="--width: 87%"></span><span>Machine Learning</span></div>
+            <div class="skill-item"><span class="skill-bar" style="--width: 84%"></span><span>Deep Learning</span></div>
+            <div class="skill-item"><span class="skill-bar" style="--width: 85%"></span><span>Computer Vision</span></div>
+            <div class="skill-item"><span class="skill-bar" style="--width: 82%"></span><span>NLP</span></div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-<!-- Skills Section -->
-<section id="skills" class="section-box">
-  <h2>My <span>Skills</span></h2>
-  <div class="skills-grid">
-
-    <!-- Languages -->
-    <div class="skill-card">
-      <div class="icon">💻</div>
-      <h3>Languages</h3>
-      <ul>
-        <li>Python</li>
-        <li>Java</li>
-        <li>C</li>
-        <li>C++</li>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-      </ul>
-    </div>
-
-    <!-- Libraries & Frameworks -->
-    <div class="skill-card">
-      <div class="icon">⚙️</div>
-      <h3>Libraries & Frameworks</h3>
-      <ul>
-        <li>React.js</li>
-        <li>Node.js</li>
-        <li>Express.js</li>
-        <li>Next.js</li>
-        <li>Bootstrap</li>
-        <li>Tailwind CSS</li>
-        <li>Flask</li>
-        <li>OpenCV</li>
-        <li>TensorFlow</li>
-        <li>Keras</li>
-        <li>PyTorch</li>
-      </ul>
-    </div>
-
-    <div class="skill-card databases">
-  <div class="icon">🗄️</div>
-  <h3>Databases</h3>
-  <ul>
-    <li>SQL</li>
-    <li>MongoDB</li>
-  </ul>
-</div>
-
-    <!-- Tools & Platforms -->
-    <div class="skill-card">
-      <div class="icon">🛠️</div>
-      <h3>Tools & Platforms</h3>
-      <ul>
-        <li>Git</li>
-        <li>GitHub</li>
-        <li>Jupyter Notebook</li>
-        <li>Streamlit</li>
-        <li>Vercel</li>
-        <li>Figma</li>
-        <li>AWS</li>
-        <li>VS Code</li>
-      </ul>
-    </div>
-
-    <!-- Advanced -->
-    <div class="skill-card">
-      <div class="icon">🚀</div>
-      <h3>Advanced</h3>
-      <ul>
-        <li>Machine Learning</li>
-        <li>Deep Learning</li>
-        <li>Machine Vision</li>
-        <li>Computer Vision</li>
-        <li>Natural Language Processing (NLP)</li>
-      </ul>
-    </div>
-
-  </div>
-</section>
-
-
   <!-- Projects Section -->
-  <section id="projects" class="section-box">
-    <h2>My <span>Projects</span></h2>
-    <div class="projects-grid">
-      <div class="project-card"><h3>Multi-Class Abnormality Detection</h3><p>CNN & ensemble model to detect abnormalities in Video Capsule Endoscopy.</p><a class="arrow-btn" href="https://github.com/Pragati1910/Multi-Class-Abnormality-Detection" target="_blank">&#8594;</a></div>
-      <div class="project-card"><h3>AI-Based Virtual Try-On</h3><p>Deep learning system to let users try-on clothing virtually.</p><a class="arrow-btn" href="https://github.com/Pragati1910/AI-Based-Virtual-Try-On-System-for-Clothing" target="_blank">&#8594;</a></div>
-      <div class="project-card"><h3>Hate Speech Detection</h3><p>NLP model to identify hate speech in online communications.</p><a class="arrow-btn" href="https://github.com/Pragati1910/Hate-Speech-Detection.git" target="_blank">&#8594;</a></div>
-      <div class="project-card"><h3>E-Cell Website</h3><p>MERN stack site for VITC’s E-Cell to showcase events and hacks.</p><a class="arrow-btn" href="https://github.com/Pragati1910/Ecell_website" target="_blank">&#8594;</a></div>
-      <div class="project-card"><h3>Pothole Detection</h3><p>OpenCV-based detection system to improve road safety and mapping.</p><a class="arrow-btn" href="https://github.com/Pragati1910/Pothole_Detection" target="_blank">&#8594;</a></div>
-      <div class="project-card"><h3>Carlo Rino Redesign</h3><p>Responsive UI/UX design revamp using Figma.</p><a class="arrow-btn" href="https://www.figma.com/proto/98AhHZ92CW5K2zTj3KFZ5l/CARLO-RINO" target="_blank">&#8594;</a></div>
-    </div>
-    <div class="show-more">
-      <a href="https://github.com/Pragati1910" target="_blank" class="btn">Show More Projects →</a>
+  <section id="projects" class="section projects-section" data-testid="projects-section">
+    <div class="container">
+      <div class="section-header" data-testid="projects-header">
+        <span class="section-number">04</span>
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="title-line"></div>
+      </div>
+
+      <div class="projects-grid" data-testid="projects-grid">
+        <div class="project-card" data-testid="project-1">
+          <div class="project-number">01</div>
+          <div class="project-icon">🏥</div>
+          <h3 class="project-title">Multi-Class Abnormality Detection</h3>
+          <p class="project-description">CNN & ensemble model to detect abnormalities in Video Capsule Endoscopy.</p>
+          <div class="project-tech">
+            <span class="tech-tag">CNN</span>
+            <span class="tech-tag">Ensemble</span>
+            <span class="tech-tag">Healthcare</span>
+          </div>
+          <a href="https://github.com/Pragati1910/Multi-Class-Abnormality-Detection" target="_blank" class="project-link" data-testid="project-link-1">
+            <span>View Project</span>
+            <i class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
+
+        <div class="project-card" data-testid="project-2">
+          <div class="project-number">02</div>
+          <div class="project-icon">👗</div>
+          <h3 class="project-title">AI-Based Virtual Try-On</h3>
+          <p class="project-description">Deep learning system to let users try-on clothing virtually.</p>
+          <div class="project-tech">
+            <span class="tech-tag">Deep Learning</span>
+            <span class="tech-tag">Fashion Tech</span>
+            <span class="tech-tag">GANs</span>
+          </div>
+          <a href="https://github.com/Pragati1910/AI-Based-Virtual-Try-On-System-for-Clothing" target="_blank" class="project-link" data-testid="project-link-2">
+            <span>View Project</span>
+            <i class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
+
+        <div class="project-card" data-testid="project-3">
+          <div class="project-number">03</div>
+          <div class="project-icon">🛡️</div>
+          <h3 class="project-title">Hate Speech Detection</h3>
+          <p class="project-description">NLP model to identify hate speech in online communications.</p>
+          <div class="project-tech">
+            <span class="tech-tag">NLP</span>
+            <span class="tech-tag">Classification</span>
+            <span class="tech-tag">BERT</span>
+          </div>
+          <a href="https://github.com/Pragati1910/Hate-Speech-Detection.git" target="_blank" class="project-link" data-testid="project-link-3">
+            <span>View Project</span>
+            <i class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
+
+        <div class="project-card" data-testid="project-4">
+          <div class="project-number">04</div>
+          <div class="project-icon">🚀</div>
+          <h3 class="project-title">E-Cell Website</h3>
+          <p class="project-description">MERN stack site for VITC's E-Cell to showcase events and hackathons.</p>
+          <div class="project-tech">
+            <span class="tech-tag">MERN</span>
+            <span class="tech-tag">Full Stack</span>
+            <span class="tech-tag">React</span>
+          </div>
+          <a href="https://github.com/Pragati1910/Ecell_website" target="_blank" class="project-link" data-testid="project-link-4">
+            <span>View Project</span>
+            <i class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
+
+        <div class="project-card" data-testid="project-5">
+          <div class="project-number">05</div>
+          <div class="project-icon">🚧</div>
+          <h3 class="project-title">Pothole Detection</h3>
+          <p class="project-description">OpenCV-based detection system to improve road safety and mapping.</p>
+          <div class="project-tech">
+            <span class="tech-tag">OpenCV</span>
+            <span class="tech-tag">Computer Vision</span>
+            <span class="tech-tag">Python</span>
+          </div>
+          <a href="https://github.com/Pragati1910/Pothole_Detection" target="_blank" class="project-link" data-testid="project-link-5">
+            <span>View Project</span>
+            <i class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
+
+        <div class="project-card" data-testid="project-6">
+          <div class="project-number">06</div>
+          <div class="project-icon">🎨</div>
+          <h3 class="project-title">Carlo Rino Redesign</h3>
+          <p class="project-description">Responsive UI/UX design revamp using Figma.</p>
+          <div class="project-tech">
+            <span class="tech-tag">UI/UX</span>
+            <span class="tech-tag">Figma</span>
+            <span class="tech-tag">Design</span>
+          </div>
+          <a href="https://www.figma.com/proto/98AhHZ92CW5K2zTj3KFZ5l/CARLO-RINO" target="_blank" class="project-link" data-testid="project-link-6">
+            <span>View Project</span>
+            <i class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="projects-more" data-testid="projects-more">
+        <a href="https://github.com/Pragati1910" target="_blank" class="more-link">
+          <span>View All Projects on GitHub</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="section-box">
-    <h2>Contact <span>Me</span></h2>
-    <form class="contact-form">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
+  <section id="contact" class="section contact-section" data-testid="contact-section">
+    <div class="container">
+      <div class="section-header" data-testid="contact-header">
+        <span class="section-number">05</span>
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="title-line"></div>
+      </div>
 
-    <p class="alt-mail">Or instead mail me at <a href="mailto:pragatimaheshwari04@gmail.com">pragatimaheshwari04@gmail.com</a></p>
+      <div class="contact-content">
+        <div class="contact-info" data-testid="contact-info">
+          <h3>Let's work together!</h3>
+          <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+          
+          <div class="contact-methods">
+            <a href="mailto:pragatimaheshwari04@gmail.com" class="contact-method" data-testid="contact-email">
+              <div class="method-icon"><i class="fas fa-envelope"></i></div>
+              <div class="method-info">
+                <span class="method-label">Email</span>
+                <span class="method-value">pragatimaheshwari04@gmail.com</span>
+              </div>
+            </a>
+            
+            <a href="https://github.com/Pragati1910" target="_blank" class="contact-method" data-testid="contact-github">
+              <div class="method-icon"><i class="fab fa-github"></i></div>
+              <div class="method-info">
+                <span class="method-label">GitHub</span>
+                <span class="method-value">@Pragati1910</span>
+              </div>
+            </a>
+            
+            <a href="https://www.linkedin.com/in/pragati-maheshwari2004/" target="_blank" class="contact-method" data-testid="contact-linkedin">
+              <div class="method-icon"><i class="fab fa-linkedin"></i></div>
+              <div class="method-info">
+                <span class="method-label">LinkedIn</span>
+                <span class="method-value">Pragati Maheshwari</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <form class="contact-form" data-testid="contact-form">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required data-testid="form-name">
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required data-testid="form-email">
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required data-testid="form-message"></textarea>
+          </div>
+          
+          <button type="submit" class="submit-btn" data-testid="form-submit">
+            <span>Send Message</span>
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+    </div>
   </section>
 
   <!-- Footer -->
-  <footer class="footer">
-    <p>&copy; 2025 Pragati Maheshwari. All rights reserved.</p>
+  <footer class="footer" data-testid="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-text">
+          <p>&copy; 2025 Pragati Maheshwari. All rights reserved.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#home">Back to Top <i class="fas fa-arrow-up"></i></a>
+        </div>
+      </div>
+    </div>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
