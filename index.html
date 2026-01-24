@@ -9,6 +9,41 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-content">
+      <div class="loading-text">LOADING</div>
+      <div class="loading-spinner"></div>
+      <div class="loading-progress">
+        <div class="loading-bar" id="loadingBar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Particles Container -->
+  <canvas id="particlesCanvas" class="particles-canvas"></canvas>
+  
+  <!-- Constellation Canvas -->
+  <canvas id="constellationCanvas" class="constellation-canvas"></canvas>
+
+  <!-- Theme & Sound Toggle -->
+  <div class="controls-panel">
+    <button class="control-btn theme-toggle" id="themeToggle" data-testid="theme-toggle">
+      <i class="fas fa-moon"></i>
+    </button>
+    <button class="control-btn sound-toggle" id="soundToggle" data-testid="sound-toggle">
+      <i class="fas fa-volume-up"></i>
+    </button>
+  </div>
+
+  <!-- Back to Top Rocket -->
+  <button class="rocket-btn" id="rocketBtn" data-testid="rocket-btn">
+    <i class="fas fa-rocket"></i>
+  </button>
+
   <!-- Animated Background -->
   <div class="animated-bg">
     <div class="grid-lines"></div>
@@ -16,6 +51,8 @@
       <div class="shape shape-1"></div>
       <div class="shape shape-2"></div>
       <div class="shape shape-3"></div>
+      <div class="shape shape-4"></div>
+      <div class="shape shape-5"></div>
     </div>
   </div>
 
@@ -46,7 +83,7 @@
           <span class="label-box">AI/ML Engineer</span>
         </div>
         
-        <h1 class="hero-title" data-testid="hero-title">
+        <h1 class="hero-title glitch-text" data-testid="hero-title" data-text="PRAGATI MAHESHWARI">
           <span class="title-line">PRAGATI</span>
           <span class="title-line highlight">MAHESHWARI</span>
         </h1>
@@ -54,30 +91,26 @@
         <div class="hero-subtitle" data-testid="hero-subtitle">
           <div class="subtitle-line">
             <span class="icon-box"><i class="fas fa-code"></i></span>
-            <span class="text">AI/ML Engineer</span>
-          </div>
-          <div class="subtitle-line">
-            <span class="icon-box"><i class="fas fa-rocket"></i></span>
-            <span class="text">Full Stack Developer</span>
+            <span class="text typing-text" id="typingText">AI/ML Engineer</span>
           </div>
         </div>
 
         <div class="hero-cta" data-testid="hero-cta">
-          <a href="#projects" class="cta-btn primary" data-testid="cta-projects">
+          <a href="#projects" class="cta-btn primary magnetic-btn" data-testid="cta-projects">
             <span>View Projects</span>
             <i class="fas fa-arrow-right"></i>
           </a>
-          <a href="#contact" class="cta-btn secondary" data-testid="cta-contact">
+          <a href="#contact" class="cta-btn secondary magnetic-btn" data-testid="cta-contact">
             <span>Let's Connect</span>
             <i class="fas fa-paper-plane"></i>
           </a>
         </div>
 
         <div class="hero-links" data-testid="hero-links">
-          <a href="https://github.com/Pragati1910" target="_blank" class="social-link" data-testid="github-link">
+          <a href="https://github.com/Pragati1910" target="_blank" class="social-link bounce-icon" data-testid="github-link">
             <i class="fab fa-github"></i>
           </a>
-          <a href="https://www.linkedin.com/in/pragati-maheshwari2004/" target="_blank" class="social-link" data-testid="linkedin-link">
+          <a href="https://www.linkedin.com/in/pragati-maheshwari2004/" target="_blank" class="social-link bounce-icon" data-testid="linkedin-link">
             <i class="fab fa-linkedin"></i>
           </a>
         </div>
@@ -118,16 +151,16 @@
           <p>Outside of coding, I'm passionate about innovation, collaboration, and exploring the next big thing in tech.</p>
 
           <div class="about-stats" data-testid="about-stats">
-            <div class="stat-box">
-              <span class="stat-number">8.83</span>
+            <div class="stat-box" data-count="8.83">
+              <span class="stat-number" data-target="8.83">0</span>
               <span class="stat-label">CGPA</span>
             </div>
             <div class="stat-box">
               <span class="stat-number">2022-2026</span>
               <span class="stat-label">VIT Chennai</span>
             </div>
-            <div class="stat-box">
-              <span class="stat-number">10+</span>
+            <div class="stat-box" data-count="10">
+              <span class="stat-number" data-target="10">0</span>
               <span class="stat-label">Projects</span>
             </div>
           </div>
@@ -137,12 +170,12 @@
           <div class="visual-card">
             <div class="card-content">
               <div class="tech-stack">
-                <div class="tech-item">React</div>
-                <div class="tech-item">Node.js</div>
-                <div class="tech-item">Python</div>
-                <div class="tech-item">TensorFlow</div>
-                <div class="tech-item">MongoDB</div>
-                <div class="tech-item">AWS</div>
+                <div class="tech-item glow-item"><i class="fab fa-react"></i> React</div>
+                <div class="tech-item glow-item"><i class="fab fa-node-js"></i> Node.js</div>
+                <div class="tech-item glow-item"><i class="fab fa-python"></i> Python</div>
+                <div class="tech-item glow-item"><i class="fas fa-brain"></i> TensorFlow</div>
+                <div class="tech-item glow-item"><i class="fas fa-database"></i> MongoDB</div>
+                <div class="tech-item glow-item"><i class="fab fa-aws"></i> AWS</div>
               </div>
             </div>
           </div>
@@ -164,7 +197,8 @@
         <div class="timeline-item" data-testid="timeline-item">
           <div class="timeline-marker"></div>
           <div class="timeline-content">
-            <div class="timeline-date">June 2024 – Septembe 2024</div>
+            <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
+            <div class="timeline-date">June 2024 – September 2024</div>
             <h3 class="timeline-title">Software Engineer Intern</h3>
             <div class="timeline-company">FLSmidth</div>
             <ul class="timeline-description">
@@ -182,6 +216,7 @@
         <div class="timeline-item" data-testid="timeline-education">
           <div class="timeline-marker"></div>
           <div class="timeline-content">
+            <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
             <div class="timeline-date">2022 – 2026</div>
             <h3 class="timeline-title">B.Tech in Computer Science Engineering</h3>
             <div class="timeline-company">VIT Chennai</div>
@@ -192,22 +227,21 @@
           </div>
         </div>
 
-
-    <div class="timeline-item" data-testid="timeline-school">
-      <div class="timeline-marker"></div>
-      <div class="timeline-content">
-        <div class="timeline-date">2008 – 2022</div>
-        <h3 class="timeline-title">Higher Secondary Education (PCM)</h3>
-        <div class="timeline-company">Chennai Public School</div>
-        <ul class="timeline-description">
-          <li><i class="fas fa-check"></i>Physics, Chemistry & Mathematics (PCM)</li>
-          <li><i class="fas fa-check"></i>CGPA: 9.12</li>
-        </ul>
+        <div class="timeline-item" data-testid="timeline-school">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-icon"><i class="fas fa-school"></i></div>
+            <div class="timeline-date">2008 – 2022</div>
+            <h3 class="timeline-title">Higher Secondary Education (PCM)</h3>
+            <div class="timeline-company">Chennai Public School</div>
+            <ul class="timeline-description">
+              <li><i class="fas fa-check"></i>Physics, Chemistry & Mathematics (PCM)</li>
+              <li><i class="fas fa-check"></i>CGPA: 9.12</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
-    </div>
-    </div>
-
   </section>
 
   <!-- Skills Section -->
@@ -219,7 +253,12 @@
         <div class="title-line"></div>
       </div>
 
-      <div class="skills-grid" data-testid="skills-grid">
+      <div class="skills-view-toggle">
+        <button class="view-btn active" data-view="bars">Bar View</button>
+        <button class="view-btn" data-view="circles">Circle View</button>
+      </div>
+
+      <div class="skills-grid" id="skillsGrid" data-testid="skills-grid">
         <div class="skill-category" data-testid="skill-languages">
           <div class="category-header">
             <div class="category-icon">
@@ -228,10 +267,10 @@
             <h3>Languages</h3>
           </div>
           <div class="skill-list">
-            <div class="skill-item"><span class="skill-bar" style="--width: 90%"></span><span>Python</span></div>
-            <div class="skill-item"><span class="skill-bar" style="--width: 85%"></span><span>JavaScript</span></div>
-            <div class="skill-item"><span class="skill-bar" style="--width: 80%"></span><span>Java</span></div>
-            <div class="skill-item"><span class="skill-bar" style="--width: 75%"></span><span>C/C++</span></div>
+            <div class="skill-item"><span class="skill-bar" style="--width: 90%"></span><span>Python</span><span class="skill-percent">90%</span></div>
+            <div class="skill-item"><span class="skill-bar" style="--width: 85%"></span><span>JavaScript</span><span class="skill-percent">85%</span></div>
+            <div class="skill-item"><span class="skill-bar" style="--width: 80%"></span><span>Java</span><span class="skill-percent">80%</span></div>
+            <div class="skill-item"><span class="skill-bar" style="--width: 75%"></span><span>C/C++</span><span class="skill-percent">75%</span></div>
           </div>
         </div>
 
@@ -243,10 +282,10 @@
             <h3>Frameworks</h3>
           </div>
           <div class="skill-list">
-            <div class="skill-item"><span class="skill-bar" style="--width: 92%"></span><span>React.js</span></div>
-            <div class="skill-item"><span class="skill-bar" style="--width: 87%"></span><span>Node.js</span></div>
-            <div class="skill-item"><span class="skill-bar" style="--width: 85%"></span><span>Next.js</span></div>
-            <div class="skill-item"><span class="skill-bar" style="--width: 88%"></span><span>TensorFlow</span></div>
+            <div class="skill-item"><span class="skill-bar" style="--width: 92%"></span><span>React.js</span><span class="skill-percent">92%</span></div>
+            <div class="skill-item"><span class="skill-bar" style="--width: 87%"></span><span>Node.js</span><span class="skill-percent">87%</span></div>
+            <div class="skill-item"><span class="skill-bar" style="--width: 85%"></span><span>Next.js</span><span class="skill-percent">85%</span></div>
+            <div class="skill-item"><span class="skill-bar" style="--width: 88%"></span><span>TensorFlow</span><span class="skill-percent">88%</span></div>
           </div>
         </div>
 
@@ -258,8 +297,8 @@
             <h3>Databases</h3>
           </div>
           <div class="skill-list">
-            <div class="skill-item"><span class="skill-bar" style="--width: 88%"></span><span>MongoDB</span></div>
-            <div class="skill-item"><span class="skill-bar" style="--width: 85%"></span><span>SQL</span></div>
+            <div class="skill-item"><span class="skill-bar" style="--width: 88%"></span><span>MongoDB</span><span class="skill-percent">88%</span></div>
+            <div class="skill-item"><span class="skill-bar" style="--width: 85%"></span><span>SQL</span><span class="skill-percent">85%</span></div>
           </div>
         </div>
 
@@ -271,10 +310,10 @@
             <h3>Tools & Platforms</h3>
           </div>
           <div class="skill-list">
-            <div class="skill-item"><span class="skill-bar" style="--width: 90%"></span><span>Git/GitHub</span></div>
-            <div class="skill-item"><span class="skill-bar" style="--width: 78%"></span><span>AWS</span></div>
-            <div class="skill-item"><span class="skill-bar" style="--width: 86%"></span><span>Figma</span></div>
-            <div class="skill-item"><span class="skill-bar" style="--width: 95%"></span><span>VS Code</span></div>
+            <div class="skill-item"><span class="skill-bar" style="--width: 90%"></span><span>Git/GitHub</span><span class="skill-percent">90%</span></div>
+            <div class="skill-item"><span class="skill-bar" style="--width: 78%"></span><span>AWS</span><span class="skill-percent">78%</span></div>
+            <div class="skill-item"><span class="skill-bar" style="--width: 86%"></span><span>Figma</span><span class="skill-percent">86%</span></div>
+            <div class="skill-item"><span class="skill-bar" style="--width: 95%"></span><span>VS Code</span><span class="skill-percent">95%</span></div>
           </div>
         </div>
 
@@ -286,10 +325,10 @@
             <h3>AI/ML</h3>
           </div>
           <div class="skill-list">
-            <div class="skill-item"><span class="skill-bar" style="--width: 87%"></span><span>Machine Learning</span></div>
-            <div class="skill-item"><span class="skill-bar" style="--width: 84%"></span><span>Deep Learning</span></div>
-            <div class="skill-item"><span class="skill-bar" style="--width: 85%"></span><span>Computer Vision</span></div>
-            <div class="skill-item"><span class="skill-bar" style="--width: 82%"></span><span>NLP</span></div>
+            <div class="skill-item"><span class="skill-bar" style="--width: 87%"></span><span>Machine Learning</span><span class="skill-percent">87%</span></div>
+            <div class="skill-item"><span class="skill-bar" style="--width: 84%"></span><span>Deep Learning</span><span class="skill-percent">84%</span></div>
+            <div class="skill-item"><span class="skill-bar" style="--width: 85%"></span><span>Computer Vision</span><span class="skill-percent">85%</span></div>
+            <div class="skill-item"><span class="skill-bar" style="--width: 82%"></span><span>NLP</span><span class="skill-percent">82%</span></div>
           </div>
         </div>
       </div>
@@ -306,105 +345,189 @@
       </div>
 
       <div class="projects-grid" data-testid="projects-grid">
-        <div class="project-card" data-testid="project-1">
-          <div class="project-number">01</div>
-          <div class="project-icon">🏥</div>
-          <h3 class="project-title">Multi-Class Abnormality Detection</h3>
-          <p class="project-description">CNN & ensemble model to detect abnormalities in Video Capsule Endoscopy.</p>
-          <div class="project-tech">
-            <span class="tech-tag">CNN</span>
-            <span class="tech-tag">Ensemble</span>
-            <span class="tech-tag">Healthcare</span>
+        <div class="project-card flip-card" data-testid="project-1">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="project-number">01</div>
+              <div class="project-icon">🏥</div>
+              <h3 class="project-title">Multi-Class Abnormality Detection</h3>
+              <p class="project-description">CNN & ensemble model to detect abnormalities in Video Capsule Endoscopy.</p>
+              <div class="project-tech">
+                <span class="tech-tag">CNN</span>
+                <span class="tech-tag">Ensemble</span>
+                <span class="tech-tag">Healthcare</span>
+              </div>
+              <div class="flip-hint">Click to flip</div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Project Details</h3>
+              <p>Advanced CNN-based system for medical image analysis with 95% accuracy.</p>
+              <ul>
+                <li>✓ Multi-class classification</li>
+                <li>✓ Ensemble learning</li>
+                <li>✓ Real-time detection</li>
+              </ul>
+              <a href="https://github.com/Pragati1910/Multi-Class-Abnormality-Detection" target="_blank" class="project-link" data-testid="project-link-1">
+                <span>View on GitHub</span>
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
           </div>
-          <a href="https://github.com/Pragati1910/Multi-Class-Abnormality-Detection" target="_blank" class="project-link" data-testid="project-link-1">
-            <span>View Project</span>
-            <i class="fas fa-external-link-alt"></i>
-          </a>
         </div>
 
-        <div class="project-card" data-testid="project-2">
-          <div class="project-number">02</div>
-          <div class="project-icon">👗</div>
-          <h3 class="project-title">AI-Based Virtual Try-On</h3>
-          <p class="project-description">Deep learning system to let users try-on clothing virtually.</p>
-          <div class="project-tech">
-            <span class="tech-tag">Deep Learning</span>
-            <span class="tech-tag">Fashion Tech</span>
-            <span class="tech-tag">GANs</span>
+        <div class="project-card flip-card" data-testid="project-2">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="project-number">02</div>
+              <div class="project-icon">👗</div>
+              <h3 class="project-title">AI-Based Virtual Try-On</h3>
+              <p class="project-description">Deep learning system to let users try-on clothing virtually.</p>
+              <div class="project-tech">
+                <span class="tech-tag">Deep Learning</span>
+                <span class="tech-tag">Fashion Tech</span>
+                <span class="tech-tag">GANs</span>
+              </div>
+              <div class="flip-hint">Click to flip</div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Project Details</h3>
+              <p>Revolutionary virtual fitting room using GANs for realistic cloth simulation.</p>
+              <ul>
+                <li>✓ Pose estimation</li>
+                <li>✓ Texture mapping</li>
+                <li>✓ Real-time rendering</li>
+              </ul>
+              <a href="https://github.com/Pragati1910/AI-Based-Virtual-Try-On-System-for-Clothing" target="_blank" class="project-link" data-testid="project-link-2">
+                <span>View on GitHub</span>
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
           </div>
-          <a href="https://github.com/Pragati1910/AI-Based-Virtual-Try-On-System-for-Clothing" target="_blank" class="project-link" data-testid="project-link-2">
-            <span>View Project</span>
-            <i class="fas fa-external-link-alt"></i>
-          </a>
         </div>
 
-        <div class="project-card" data-testid="project-3">
-          <div class="project-number">03</div>
-          <div class="project-icon">🛡️</div>
-          <h3 class="project-title">Hate Speech Detection</h3>
-          <p class="project-description">NLP model to identify hate speech in online communications.</p>
-          <div class="project-tech">
-            <span class="tech-tag">NLP</span>
-            <span class="tech-tag">Classification</span>
-            <span class="tech-tag">BERT</span>
+        <div class="project-card flip-card" data-testid="project-3">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="project-number">03</div>
+              <div class="project-icon">🛡️</div>
+              <h3 class="project-title">Hate Speech Detection</h3>
+              <p class="project-description">NLP model to identify hate speech in online communications.</p>
+              <div class="project-tech">
+                <span class="tech-tag">NLP</span>
+                <span class="tech-tag">Classification</span>
+                <span class="tech-tag">BERT</span>
+              </div>
+              <div class="flip-hint">Click to flip</div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Project Details</h3>
+              <p>BERT-based hate speech classifier for social media content moderation.</p>
+              <ul>
+                <li>✓ Multi-lingual support</li>
+                <li>✓ Context analysis</li>
+                <li>✓ High precision</li>
+              </ul>
+              <a href="https://github.com/Pragati1910/Hate-Speech-Detection.git" target="_blank" class="project-link" data-testid="project-link-3">
+                <span>View on GitHub</span>
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
           </div>
-          <a href="https://github.com/Pragati1910/Hate-Speech-Detection.git" target="_blank" class="project-link" data-testid="project-link-3">
-            <span>View Project</span>
-            <i class="fas fa-external-link-alt"></i>
-          </a>
         </div>
 
-        <div class="project-card" data-testid="project-4">
-          <div class="project-number">04</div>
-          <div class="project-icon">🚀</div>
-          <h3 class="project-title">E-Cell Website</h3>
-          <p class="project-description">MERN stack site for VITC's E-Cell to showcase events and hackathons.</p>
-          <div class="project-tech">
-            <span class="tech-tag">MERN</span>
-            <span class="tech-tag">Full Stack</span>
-            <span class="tech-tag">React</span>
+        <div class="project-card flip-card" data-testid="project-4">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="project-number">04</div>
+              <div class="project-icon">🚀</div>
+              <h3 class="project-title">E-Cell Website</h3>
+              <p class="project-description">MERN stack site for VITC's E-Cell to showcase events and hackathons.</p>
+              <div class="project-tech">
+                <span class="tech-tag">MERN</span>
+                <span class="tech-tag">Full Stack</span>
+                <span class="tech-tag">React</span>
+              </div>
+              <div class="flip-hint">Click to flip</div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Project Details</h3>
+              <p>Complete event management platform for entrepreneurship cell activities.</p>
+              <ul>
+                <li>✓ Event registration</li>
+                <li>✓ Admin dashboard</li>
+                <li>✓ Responsive design</li>
+              </ul>
+              <a href="https://github.com/Pragati1910/Ecell_website" target="_blank" class="project-link" data-testid="project-link-4">
+                <span>View on GitHub</span>
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
           </div>
-          <a href="https://github.com/Pragati1910/Ecell_website" target="_blank" class="project-link" data-testid="project-link-4">
-            <span>View Project</span>
-            <i class="fas fa-external-link-alt"></i>
-          </a>
         </div>
 
-        <div class="project-card" data-testid="project-5">
-          <div class="project-number">05</div>
-          <div class="project-icon">🚧</div>
-          <h3 class="project-title">Pothole Detection</h3>
-          <p class="project-description">OpenCV-based detection system to improve road safety and mapping.</p>
-          <div class="project-tech">
-            <span class="tech-tag">OpenCV</span>
-            <span class="tech-tag">Computer Vision</span>
-            <span class="tech-tag">Python</span>
+        <div class="project-card flip-card" data-testid="project-5">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="project-number">05</div>
+              <div class="project-icon">🚧</div>
+              <h3 class="project-title">Pothole Detection</h3>
+              <p class="project-description">OpenCV-based detection system to improve road safety and mapping.</p>
+              <div class="project-tech">
+                <span class="tech-tag">OpenCV</span>
+                <span class="tech-tag">Computer Vision</span>
+                <span class="tech-tag">Python</span>
+              </div>
+              <div class="flip-hint">Click to flip</div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Project Details</h3>
+              <p>Automated road damage detection using computer vision algorithms.</p>
+              <ul>
+                <li>✓ Real-time detection</li>
+                <li>✓ GPS mapping</li>
+                <li>✓ Damage classification</li>
+              </ul>
+              <a href="https://github.com/Pragati1910/Pothole_Detection" target="_blank" class="project-link" data-testid="project-link-5">
+                <span>View on GitHub</span>
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
           </div>
-          <a href="https://github.com/Pragati1910/Pothole_Detection" target="_blank" class="project-link" data-testid="project-link-5">
-            <span>View Project</span>
-            <i class="fas fa-external-link-alt"></i>
-          </a>
         </div>
 
-        <div class="project-card" data-testid="project-6">
-          <div class="project-number">06</div>
-          <div class="project-icon">🎨</div>
-          <h3 class="project-title">Carlo Rino Redesign</h3>
-          <p class="project-description">Responsive UI/UX design revamp using Figma.</p>
-          <div class="project-tech">
-            <span class="tech-tag">UI/UX</span>
-            <span class="tech-tag">Figma</span>
-            <span class="tech-tag">Design</span>
+        <div class="project-card flip-card" data-testid="project-6">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="project-number">06</div>
+              <div class="project-icon">🎨</div>
+              <h3 class="project-title">Carlo Rino Redesign</h3>
+              <p class="project-description">Responsive UI/UX design revamp using Figma.</p>
+              <div class="project-tech">
+                <span class="tech-tag">UI/UX</span>
+                <span class="tech-tag">Figma</span>
+                <span class="tech-tag">Design</span>
+              </div>
+              <div class="flip-hint">Click to flip</div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Project Details</h3>
+              <p>Complete e-commerce redesign focused on user experience and conversions.</p>
+              <ul>
+                <li>✓ User research</li>
+                <li>✓ Prototyping</li>
+                <li>✓ Interactive mockups</li>
+              </ul>
+              <a href="https://www.figma.com/proto/98AhHZ92CW5K2zTj3KFZ5l/CARLO-RINO" target="_blank" class="project-link" data-testid="project-link-6">
+                <span>View on Figma</span>
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
           </div>
-          <a href="https://www.figma.com/proto/98AhHZ92CW5K2zTj3KFZ5l/CARLO-RINO" target="_blank" class="project-link" data-testid="project-link-6">
-            <span>View Project</span>
-            <i class="fas fa-external-link-alt"></i>
-          </a>
         </div>
       </div>
 
       <div class="projects-more" data-testid="projects-more">
-        <a href="https://github.com/Pragati1910" target="_blank" class="more-link">
+        <a href="https://github.com/Pragati1910" target="_blank" class="more-link magnetic-btn">
           <span>View All Projects on GitHub</span>
           <i class="fas fa-arrow-right"></i>
         </a>
@@ -469,7 +592,7 @@
             <textarea id="message" name="message" rows="5" required data-testid="form-message"></textarea>
           </div>
           
-          <button type="submit" class="submit-btn" data-testid="form-submit">
+          <button type="submit" class="submit-btn magnetic-btn" data-testid="form-submit">
             <span>Send Message</span>
             <i class="fas fa-paper-plane"></i>
           </button>
@@ -486,11 +609,14 @@
           <p>&copy; 2025 Pragati Maheshwari. All rights reserved.</p>
         </div>
         <div class="footer-links">
-          <a href="#home">Back to Top <i class="fas fa-arrow-up"></i></a>
+          <a href="#home" class="back-top-link">Back to Top <i class="fas fa-arrow-up"></i></a>
         </div>
       </div>
     </div>
   </footer>
+
+  <!-- Confetti Container -->
+  <canvas id="confettiCanvas" class="confetti-canvas"></canvas>
 
   <script src="script.js"></script>
 </body>
